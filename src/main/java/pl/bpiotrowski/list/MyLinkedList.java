@@ -37,6 +37,9 @@ class MyLinkedList<T> {
     }
 
     T getElement(int index) {
+        if(index >= size()) {
+            throw new IndexOutOfBoundsException("Nie ma takiego elementu!");
+        }
         MyNode<T> iterator = head;
         for (int i = 0; i < index; i++) {
             iterator = iterator.getNextNode();
@@ -75,5 +78,15 @@ class MyLinkedList<T> {
             iterator = iterator.getNextNode();
         }
         System.out.print(iterator.getValue());
+    }
+
+    int size() {
+        int count = 0;
+        MyNode<T> iterator = head;
+        while (iterator != null) {
+            count++;
+            iterator = iterator.getNextNode();
+        }
+        return count;
     }
 }
