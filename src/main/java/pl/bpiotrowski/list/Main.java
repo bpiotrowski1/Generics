@@ -12,10 +12,10 @@ public class Main {
         linkedList.removeElement(3);
         linkedList.addElementAfterIndex('Y',2);
 
-        System.out.println(linkedList.getFirstElement().getValue());
-        System.out.println(linkedList.getElement(1).getValue());
-        System.out.println(linkedList.getElement(2).getValue());
-        System.out.println(linkedList.getElement(3).getValue());
-        System.out.println(linkedList.getElement(4).getValue());
+        System.out.println(linkedList.getFirstElement());
+        linkedList.printAllNodes();
+        linkedList.reverse();
+        System.out.println();
+        linkedList.printAllNodes();
     }
 }

@@ -32,16 +32,16 @@ class MyLinkedList<T> {
         iterator.setNextNode(node);
     }
 
-    MyNode getFirstElement() {
-        return head;
+    T getFirstElement() {
+        return head.getValue();
     }
 
-    MyNode getElement(int index) {
-        MyNode iterator = head;
+    T getElement(int index) {
+        MyNode<T> iterator = head;
         for (int i = 0; i < index; i++) {
             iterator = iterator.getNextNode();
         }
-        return iterator;
+        return iterator.getValue();
     }
 
     void removeElement(int index) {
@@ -50,5 +50,26 @@ class MyLinkedList<T> {
             iterator = iterator.getNextNode();
         }
         iterator.setNextNode(iterator.getNextNode().getNextNode());
+    }
+
+    void reverse() {
+        MyLinkedList<T> newList = new MyLinkedList<>();
+        MyNode<T> iterator = head;
+
+        while (iterator != null) {
+            newList.addElementToStart(iterator.getValue());
+            iterator = iterator.getNextNode();
+        }
+
+        this.head = newList.head;
+    }
+
+    void printAllNodes() {
+        MyNode<T> iterator = head;
+        while (iterator.getNextNode() != null) {
+            System.out.print(iterator.getValue() + " ");
+            iterator = iterator.getNextNode();
+        }
+        System.out.print(iterator.getValue());
     }
 }
