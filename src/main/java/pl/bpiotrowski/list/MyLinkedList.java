@@ -45,11 +45,15 @@ class MyLinkedList<T> {
     }
 
     void removeElement(int index) {
-        MyNode<T> iterator = head;
-        for (int i = 0; i < index - 1; i++) {
-            iterator = iterator.getNextNode();
+        if(index == 0) {
+            head = head.getNextNode();
+        } else {
+            MyNode<T> iterator = head;
+            for (int i = 0; i < index - 1; i++) {
+                iterator = iterator.getNextNode();
+            }
+            iterator.setNextNode(iterator.getNextNode().getNextNode());
         }
-        iterator.setNextNode(iterator.getNextNode().getNextNode());
     }
 
     void reverse() {

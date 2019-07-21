@@ -13,6 +13,7 @@ public class Main {
         linkedList.addElementAfterIndex('Y',2);
 
         System.out.println(linkedList.getFirstElement());
+        System.out.println(linkedList.getElement(1));
         linkedList.printAllNodes();
         linkedList.reverse();
         System.out.println();
