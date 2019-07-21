@@ -1,10 +1,10 @@
 package pl.bpiotrowski.zadanie1;
 
-public class Para<T, E> {
+public class Para<T> {
     private T itemA;
-    private E itemB;
+    private T itemB;
 
-    Para(final T itemA, final E itemB) {
+    Para(final T itemA, final T itemB) {
         this.itemA = itemA;
         this.itemB = itemB;
     }
@@ -17,11 +17,11 @@ public class Para<T, E> {
         this.itemA = itemA;
     }
 
-    public E getItemB() {
+    public T getItemB() {
         return itemB;
     }
 
-    public void setItemB(final E itemB) {
+    public void setItemB(final T itemB) {
         this.itemB = itemB;
     }
 
